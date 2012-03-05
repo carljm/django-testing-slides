@@ -1,0 +1,36 @@
+body {
+    font-family: "Museo Sans", Helvetica, sans-serif;
+}
+
+.smallest {
+    font-size: 55%
+}
+
+.intro h1 {
+    margin-top: 300px;
+    margin-bottom: 150px;
+}
+
+.intro h2 {
+    text-align: left;
+    padding-left: 100px;
+}
+
+.intro img {
+    float: right;
+    padding-right: 100px;
+}
+
+
+ul {
+    list-style-type: circle;
+}
+
+.nobullets ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: .7em;
+    text-align: left;
+}
