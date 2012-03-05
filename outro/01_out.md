@@ -7,4 +7,4 @@
 ## Carl J Meyer ##
 ## @carljm ##
 ## carl@oddbird.net ##
-## github.com/carljm/djangotesting ##
+## github.com/carljm/django-testing-slides ##
