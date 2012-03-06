@@ -2,6 +2,11 @@
   "name": "Testing and Django",
   "sections": [
       {"section":"title"},
+      {"section":"whichtests"},
+      {"section":"models"},
+      {"section":"views"},
+      {"section":"doctests"},
+      {"section":"settings"},
       {"section":"outro"}
   ]
 }

@@ -8,3 +8,4 @@
 ## @carljm ##
 ## carl@oddbird.net ##
 ## github.com/carljm/django-testing-slides ##
+## github.com/carljm/django-testing-slides/code ##
