@@ -1,6 +1,6 @@
 <!SLIDE antipattern>
 
-    @@@ json
+    @@@ python
     {
         "pk": 4,
         "model": "auth.user",
