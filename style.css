@@ -34,3 +34,17 @@ li {
     font-size: .7em;
     text-align: left;
 }
+
+.no {
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 999;
+    background-image: url('circle-with-slash.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
