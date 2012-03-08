@@ -18,5 +18,12 @@ $(function() {
                 }
             }
         });
+        $(".content").bind("showoff:prev", function(event) {
+            var slide = $(currentSlide).find(".content");
+            no.hide();
+            if(slide.hasClass("antipattern")) {
+                slide.data("overlaid", false);
+            }
+        });
     });
 });

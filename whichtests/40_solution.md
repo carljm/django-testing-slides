@@ -1,9 +1,11 @@
 <!SLIDE incremental>
 
-# But it's easy to change. #
+# It's easy to change. #
 
 * unittest2 discovery
 * `TEST_RUNNER`
+
+.notes The hipsters like nose or py.test, but unittest2 gets the job done.
 
 <!SLIDE small>
 
@@ -26,6 +28,8 @@
                     )
 
             return reorder_suite(suite, (TestCase,))
+
+.notes (Enhanced version in the code online with the slides.)
 
 <!SLIDE small>
 

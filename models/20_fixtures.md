@@ -13,6 +13,8 @@
             "is_staff": false,
             "last_login": "2012-02-06 15:06:44",
 
+.notes Do you have these in your tests? BURN THEM!
+
 <!SLIDE incremental>
 
 # Just say no. #
@@ -39,25 +41,37 @@
         return Profile.objects.create(
             **defaults)
 
+.notes You can write simple factory functions like this (key benefit is prefilling FKs).
+
 <!SLIDE>
 
-# Model factories! #
+# Using a factory #
 
     @@@ python
     def test_can_vote(self):
-        """A user older than 18 can vote in the US."""
-        profile = create_profile(age=19)
+        """A user age 18+ can vote in the US."""
+        profile = create_profile(age=18)
         self.assertTrue(profile.can_vote)
 
+.notes BAD example. This test shouldn't touch the DB. So you want a smarter factory that can also build objects without saving.
 
 <!SLIDE incremental>
 
-# It's been done. #
+# Or use `factory_boy`: #
 
-* factory_boy
-* milkman
-* model-mommy
-* probably others
+    @@@ python
+    class ProfileFactory(factory.Factory):
+        FACTORY_FOR = Profile
+
+        likes_cheese = True
+        age = 32
+        address = "3815 Brookside Dr"
+        user = factory.SubFactory(UserFactory)
+
+    profile = ProfileFactory.create(
+        age=18, user__username="carljm")
+
+.notes Also there's milkman, model_mommy. I don't like random data generation.
 
 <!SLIDE incremental>
 
