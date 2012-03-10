@@ -1,4 +1,7 @@
-View these slides at http://carljm.github.com/djangotesting/
+View these slides at http://carljm.github.com/django-testing-slides/
+
+Expanded version of some code in the presentation is at
+http://carljm.github.com/django-testing-slides/code/
 
 This presentation uses https://github.com/schacon/showoff
 
