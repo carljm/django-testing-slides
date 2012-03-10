@@ -21,6 +21,8 @@ But 412 tests? 14 extra seconds?
 
 ## I'll never get those 14 seconds back. ##
 
+.notes Does anyone still need convincing that fast test suites matter?
+
 <!SLIDE>
 
 ## Not all apps are created equal. ##

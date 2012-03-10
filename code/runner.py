@@ -5,9 +5,9 @@ a base path specified in settings, rather than requiring all tests to be in
 
 """
 from django.conf import settings
+from django.test import TestCase
 from django.test.simple import DjangoTestSuiteRunner, reorder_suite
 from django.utils.importlib import import_module
-from django.utils.unittest import TestCase
 from django.utils.unittest.loader import defaultTestLoader
 
 

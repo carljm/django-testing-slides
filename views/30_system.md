@@ -1,6 +1,6 @@
 <!SLIDE>
 
-# Functional testing views #
+# Integration testing views #
 
 <!SLIDE antipattern>
 
@@ -55,11 +55,11 @@
 
 ## WebTest > django.test.Client ##
 
-* Tests are easier and faster to write.
+* System tests are easier and faster to write.
 * Tests give you more confidence that the view works.
 * (django-webtest provides integration.)
 
-.notes Django test client is in the "sour spot" - not a unit test, not a full functional test.
+.notes Django test client is in the "sour spot" - not a unit test, not a full system test. Could gain these features.
 
 <!SLIDE>
 

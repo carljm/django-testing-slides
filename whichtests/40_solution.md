@@ -27,7 +27,7 @@
                     top_level_dir=settings.BASE_PATH,
                     )
 
-            return reorder_suite(suite, (TestCase,))
+            return reorder_suite(suite, (TestCase, TransactionTestCase))
 
 .notes (Enhanced version in the code online with the slides.)
 
@@ -59,3 +59,5 @@
 # Maybe in 1.5? #
 
 * https://code.djangoproject.com/ticket/17365
+
+.notes django-nose is good too, but this could actually go in Django.

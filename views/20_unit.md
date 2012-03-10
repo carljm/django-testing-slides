@@ -43,5 +43,3 @@ hard to maintain and debug.
 * I rarely unit test views.
 
 * I write less view code, and cover it via functional tests.
-
-* Functional tests are slower, but catch more bugs.
