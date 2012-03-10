@@ -1,6 +1,6 @@
 <!SLIDE incremental>
 
-# Django's test runner #
+# Django's test discovery #
 
 * Wastes my time with tests I don't care about.
 * Requires app tests to be in a single module (resulting in boilerplate

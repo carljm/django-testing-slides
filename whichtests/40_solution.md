@@ -3,7 +3,7 @@
 # It's easy to change. #
 
 * unittest2 discovery
-* `TEST_RUNNER`
+* `TEST_RUNNER` setting
 
 .notes The hipsters like nose or py.test, but unittest2 gets the job done.
 
@@ -48,7 +48,7 @@
 
 # \o/ #
 
-* Discovers tests wherever you put them.
+* Discovers tests wherever you want them.
 * Doesn't run tests from external apps by default.
 * Flexible specification of specific tests to run: Python dotted path to test
   module, not Django app label.

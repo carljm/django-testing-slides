@@ -4,6 +4,8 @@
 
 * Write system tests for your views.
 
+* Write Selenium tests for Ajax, other JS/server interactions.
+
 * Write unit tests for everything else (not strict).
 
 * Test each case (code branch) where it occurs.

@@ -9,7 +9,7 @@
 .notes Go see the video of Gary's "Fast test, slow test" talk.
 
 
-<!SLIDE>
+<!SLIDE incremental>
 
 # Unit tests #
 
@@ -20,12 +20,16 @@
 
 * Help you structure your code better.
 
-<!SLIDE>
+<!SLIDE incremental>
 
 # Integration tests #
 
 * Test that the whole integrated system works; catch regressions.
 
-* Slow (just write a few, test the edge cases with unit tests).
+* Slow.
+
+* Less useful failures.
+
+* Write fewer.
 
 .notes Summary: both are useful, write more unit tests.
