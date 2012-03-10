@@ -30,4 +30,4 @@
             {"form": form},
             )
 
-.notes This view should have at most 3 tests. Model/form special cases should be unit tested. And views shouldn't get much more complex.
+.notes This view should have 3 tests. Model/form special cases should be unit tested. And views shouldn't get much more complex.
