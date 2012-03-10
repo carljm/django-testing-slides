@@ -95,16 +95,6 @@
 <h2>github.com/carljm/django-testing-slides</h2>
 
 <h2>github.com/carljm/django-testing-slides/code</h2></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="title/10_plan">
-<h1>The plan</h1>
-
-<ul>
-<li>Test discovery</li>
-<li>Testing models</li>
-<li>Testing views</li>
-<li>Testing docs</li>
-</ul>
-</div>
 </div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="whichtests/10_not_created_equal/1">
 <h1>Let's start a project.</h1>
 
@@ -151,7 +141,7 @@ from .test_views import (
 
 <p class="notes">Django made me do it. (Or worse yet, "import *".)</p></div>
 </div><div class="slide" data-transition="none"><div class="content incremental" ref="whichtests/30_problem">
-<h1>Django's test runner</h1>
+<h1>Django's test discovery</h1>
 
 <ul>
 <li>Wastes my time with tests I don't care about.</li>
@@ -167,7 +157,7 @@ imports).</li>
 
 <ul>
 <li>unittest2 discovery</li>
-<li><code>TEST_RUNNER</code></li>
+<li><code>TEST_RUNNER</code> setting</li>
 </ul>
 
 
@@ -207,7 +197,7 @@ TEST_RUNNER = "tests.runner.DiscoveryRunner"</code></pre></div>
 <h1>\o/</h1>
 
 <ul>
-<li>Discovers tests wherever you put them.</li>
+<li>Discovers tests wherever you want them.</li>
 <li>Doesn't run tests from external apps by default.</li>
 <li>Flexible specification of specific tests to run: Python dotted path to test
 module, not Django app label.</li>
@@ -233,7 +223,7 @@ module, not Django app label.</li>
 
 
 <p class="notes">Go see the video of Gary's "Fast test, slow test" talk.</p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="levels/10_intro/2">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="levels/10_intro/2">
 <h1>Unit tests</h1>
 
 <ul>
@@ -243,12 +233,14 @@ isolation.</p></li>
 <li><p>Help you structure your code better.</p></li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="levels/10_intro/3">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="levels/10_intro/3">
 <h1>Integration tests</h1>
 
 <ul>
 <li><p>Test that the whole integrated system works; catch regressions.</p></li>
-<li><p>Slow (just write a few, test the edge cases with unit tests).</p></li>
+<li><p>Slow.</p></li>
+<li><p>Less useful failures.</p></li>
+<li><p>Write fewer.</p></li>
 </ul>
 
 
@@ -260,12 +252,30 @@ isolation.</p></li>
 
 <ul>
 <li>Try to write tests that don't hit it at all.</li>
+<li>Separate db-independent model-layer functionality from db-dependent
+functionality.</li>
 <li>But you'll still have a lot of tests that do.</li>
+<li>Mocking the database usually isn't worth it.</li>
 </ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="models/10_dbsetup/2">
+<pre class="sh_python"><code>class Thing(models.Model):
+  def frobnicate(self):
+    """Frobnicate and save the thing."""
+    # ... do something complicated
+    self.save()</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="models/10_dbsetup/3">
+<pre class="sh_python"><code>def frobnicate_thing(thing):
+  # ... do something complicated
+  return thing
 
 
-<p class="notes">The DB is pretty core to most web apps; mocking it makes your tests fast, but I don't think it's worth it.</p></div>
-</div><div class="slide" data-transition="none"><div class="content incremental" ref="models/10_dbsetup/2">
+class Thing(models.Model):
+  def frobnicate(self):
+    """Frobnicate and save the thing."""
+    frobnicate_thing(self)
+    self.save()</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="models/10_dbsetup/4">
 <h1><code>django.test.TestCase</code></h1>
 
 <ul>
@@ -276,7 +286,7 @@ isolation.</p></li>
 
 
 <p class="notes">Django tries to make them fast...</p></div>
-</div><div class="slide" data-transition="none"><div class="content incremental" ref="models/10_dbsetup/3">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="models/10_dbsetup/5">
 <h1><code>TransactionTestCase</code></h1>
 
 <ul>
@@ -537,6 +547,7 @@ class MySeleniumTests(LiveServerTestCase):
 
 <ul>
 <li><p>Write system tests for your views.</p></li>
+<li><p>Write Selenium tests for Ajax, other JS/server interactions.</p></li>
 <li><p>Write unit tests for everything else (not strict).</p></li>
 <li><p>Test each case (code branch) where it occurs.</p></li>
 <li><p>One assert/action per test case method.</p></li>
