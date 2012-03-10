@@ -190,7 +190,7 @@ imports).</li>
                 top_level_dir=settings.BASE_PATH,
                 )
 
-        return reorder_suite(suite, (TestCase, TransactionTestCase))</code></pre>
+        return reorder_suite(suite, (TestCase,))</code></pre>
 
 <p class="notes">(Enhanced version in the code online with the slides.)</p></div>
 </div><div class="slide" data-transition="none"><div class="content small" ref="whichtests/40_solution/3">
@@ -223,7 +223,7 @@ module, not Django app label.</li>
 
 
 <p class="notes">django-nose is good too, but this could actually go in Django.</p></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="levels/10_intro/1">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="levels/10_intro/1">
 <h1>Types of test</h1>
 
 <ul>
@@ -597,13 +597,32 @@ class MySeleniumTests(LiveServerTestCase):
 
     return tests</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content incremental" ref="doctests/10_intro/6">
-<h1>Now your examples are tested!</h1>
+<h1>Your examples are tested!</h1>
 
 <ul>
-<li><p>Don't abuse this.</p></li>
+<li><p>Please don't abuse this.</p></li>
 <li><p>Keep them documentation first.</p></li>
 </ul>
 </div>
+</div><div class="slide" data-transition="none"><div class="content" ref="settings/10_intro">
+<h1>You have a setting.</h1>
+
+<ul>
+<li><code>ALLOW_COMMENTS</code>, for example.</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content antipattern" ref="settings/20_bad">
+<pre class="sh_python"><code>def test_comments_allowed(self):
+  old_allow = settings.ALLOW_COMMENTS
+  settings.ALLOW_COMMENTS = True
+  try:
+    # ...
+  finally:
+    settings.ALLOW_COMMENTS = old_allow</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="settings/30_good">
+<pre class="sh_python"><code>@override_settings(ALLOW_COMMENTS=True)
+def test_comments_allowed(self):
+  # ...</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content smaller intro" ref="outro/01_out">
 <h1>Questions?</h1>
 
