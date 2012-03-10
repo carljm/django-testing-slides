@@ -3,7 +3,7 @@
   "sections": [
       {"section":"title"},
       {"section":"whichtests"},
-      {"section": "levels"},
+      {"section":"levels"},
       {"section":"models"},
       {"section":"views"},
       {"section":"doctests"},

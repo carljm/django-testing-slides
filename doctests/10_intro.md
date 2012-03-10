@@ -43,8 +43,8 @@
 
 <!SLIDE incremental>
 
-# Now your examples are tested! #
+# Your examples are tested! #
 
-* Don't abuse this.
+* Please don't abuse this.
 
 * Keep them documentation first.
