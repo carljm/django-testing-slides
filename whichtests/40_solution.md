@@ -27,7 +27,7 @@
                     top_level_dir=settings.BASE_PATH,
                     )
 
-            return reorder_suite(suite, (TestCase, TransactionTestCase))
+            return reorder_suite(suite, (TestCase,))
 
 .notes (Enhanced version in the code online with the slides.)
 

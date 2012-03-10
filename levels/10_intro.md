@@ -1,4 +1,4 @@
-<!SLIDE>
+<!SLIDE incremental>
 
 # Types of test #
 
