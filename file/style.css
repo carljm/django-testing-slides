@@ -1,0 +1,50 @@
+body {
+    font-family: "Museo Sans", Helvetica, sans-serif;
+}
+
+.smallest {
+    font-size: 55%
+}
+
+.intro h1 {
+    margin-top: 250px;
+    margin-bottom: 150px;
+}
+
+.intro h2 {
+    text-align: left;
+    padding-left: 100px;
+}
+
+.intro img {
+    float: right;
+    padding-right: 100px;
+}
+
+
+ul {
+    list-style-type: circle;
+}
+
+.nobullets ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: .7em;
+    text-align: left;
+}
+
+.no {
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 999;
+    background-image: url(circle-with-slash.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
