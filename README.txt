@@ -1,7 +1,7 @@
 View these slides at http://carljm.github.com/django-testing-slides/
 
 Expanded version of some code in the presentation is at
-http://carljm.github.com/django-testing-slides/code/
+https://github.com/carljm/django-testing-slides/tree/master/code
 
 This presentation uses https://github.com/schacon/showoff
 
