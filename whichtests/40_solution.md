@@ -12,8 +12,8 @@
     @@@ python
     class DiscoveryRunner(DjangoTestSuiteRunner):
         """A test suite runner using unittest2 discovery."""
-        def build_suite(self, test_labels, **kwargs):
-
+        def build_suite(self, test_labels, extra_tests=None,
+                        **kwargs):
             suite = None
             discovery_root = settings.TEST_DISCOVERY_ROOT
 
@@ -27,9 +27,13 @@
                     top_level_dir=settings.BASE_PATH,
                     )
 
+            if extra_tests:
+                for test in extra_tests:
+                    suite.addTest(test)
+
             return reorder_suite(suite, (TestCase,))
 
-.notes (Enhanced version in the code online with the slides.)
+.notes (Better version in the code online with the slides.)
 
 <!SLIDE small>
 
@@ -37,11 +41,11 @@
 
     @@@ python
     import os.path
-    
+
     BASE_PATH = os.path.dirname(os.path.dirname(__file__))
-    
+
     TEST_DISCOVERY_ROOT = os.path.join(BASE_PATH, "tests")
-    
+
     TEST_RUNNER = "tests.runner.DiscoveryRunner"
 
 <!SLIDE incremental>

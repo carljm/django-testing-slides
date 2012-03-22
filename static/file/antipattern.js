@@ -8,7 +8,7 @@ $(function() {
         $(".content").bind("showoff:next", function(event) {
             var slide = $(currentSlide).find(".content");
             no.hide();
-            if(slide.hasClass("antipattern")) {
+            if(slide.hasClass("antipattern") && (incrCurr >= incrSteps)) {
                 if(!slide.data("overlaid")) {
                     no.show();
                     slide.data("overlaid", true);
