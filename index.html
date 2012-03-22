@@ -165,8 +165,8 @@ imports).</li>
 </div><div class="slide" data-transition="none"><div class="content small" ref="whichtests/40_solution/2">
 <pre class="sh_python"><code>class DiscoveryRunner(DjangoTestSuiteRunner):
     """A test suite runner using unittest2 discovery."""
-    def build_suite(self, test_labels, **kwargs):
-
+    def build_suite(self, test_labels, extra_tests=None,
+                    **kwargs):
         suite = None
         discovery_root = settings.TEST_DISCOVERY_ROOT
 
@@ -180,9 +180,13 @@ imports).</li>
                 top_level_dir=settings.BASE_PATH,
                 )
 
+        if extra_tests:
+            for test in extra_tests:
+                suite.addTest(test)
+
         return reorder_suite(suite, (TestCase,))</code></pre>
 
-<p class="notes">(Enhanced version in the code online with the slides.)</p></div>
+<p class="notes">(Better version in the code online with the slides.)</p></div>
 </div><div class="slide" data-transition="none"><div class="content small" ref="whichtests/40_solution/3">
 <h1><code>settings.py</code></h1>
 
